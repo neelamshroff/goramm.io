@@ -1,0 +1,22 @@
+<mat-toolbar color="primary">
+  <button [routerLink]="['/categories']" mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+    <mat-icon>keyboard_backspace</mat-icon>
+  </button>
+  <span>Add new category</span>
+</mat-toolbar>
+
+
+<div class="container">
+  <form [formGroup]="form" (ngSubmit)="saveDetails(form)">
+      <mat-form-field class="width-100" appearance="outline">
+          <mat-label>Name</mat-label>
+          <input autocomplete="off" matInput inputmode="tel" placeholder="Type name" formControlName="name" #nameInput>
+          <mat-error>Name is required</mat-error>
+      </mat-form-field>
+   
+      
+      <div mat-dialog-actions>
+          <button class="add-btn" mat-raised-button color="primary" type="submit" [disabled]="!form.valid">Submit</button>
+      </div>
+  </form>
+</div>
